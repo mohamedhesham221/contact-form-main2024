@@ -16,36 +16,36 @@
   <main>
     <section>
       <h1>Contact Us</h1>
-    </section>
-    <form action="" method="post">
-      <fieldset>
-        <label for="first-name">First Name *
-          <input type="text" id="first-name" placeholder="Your First Name ..." required>
-        </label>
-        <label for="last-name">Last Name *
-          <input type="text" id="last-name" placeholder="Your Last Name ..." required>
-        </label>
-        <label for="email-address">Email Address *
-          <input type="email" id="email-address" placeholder="You Email ..." required>
-        </label>
-      </fieldset>
-      <fieldset>
-        <legend>Query Type *</legend>
-        <label for="general">
-          <input type="radio" name="queries" id="general">General Enquiry</label>
-        <label for="support">
-          <input type="radio" name="queries" id="support">Support Request</label>
-      </fieldset>
-      <fieldset>
-        <label>Message *
+      <form action="" method="post">
+        <fieldset>
+          <label for="first-name">First Name <span>*</span>
+            <input type="text" id="first-name" name="first-name" placeholder="Your First Name . . ." required>
+          </label>
+          <label for="last-name">Last Name <span>*</span>
+            <input type="text" id="last-name" name="last-name" placeholder="Your Last Name . . ." required>
+          </label>
+          <label for="email-address">Email Address <span>*</span>
+            <input type="email" id="email-address" placeholder="You Email . . ." required>
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Query Type <span>*</span></legend>
+          <label for="general">
+            <input type="radio" name="queries" id="general" value="general">General Enquiry</label>
+          <label for="support">
+            <input type="radio" name="queries" id="support" value="support">Support Request</label>
+        </fieldset>
+        <fieldset>
+          <legend>Message <span>*</span></legend>
           <textarea cols="60" rows="20"></textarea>
-        </label>
-        <label for="contacted">
-          <input type="checkbox" id="contacted" required>I consest to being contacted by the team *
-        </label>
-      </fieldset>
-      <input type="submit" value="Submit">
-    </form>
+          <label for="contacted">
+            <input type="checkbox" id="contacted" name="contacted" required>I consest to being contacted by the team
+            <span>*</span>
+          </label>
+        </fieldset>
+        <input type="submit" value="Submit">
+      </form>
+    </section>
   </main>
   <!-- Please enter a valid email address
 
