@@ -6,8 +6,8 @@
 /*Colors*/
 :root {
   /*Primary*/
-  --green200Lighter: hsl(148, 38%, 91%);
-  --green600Medium: hsl(169, 82%, 27%);
+  --green200Lighter: #dff1e7;
+  --green600Medium: #0c7d69;
   --red: hsl(0, 66%, 54%);
 
   /*Neutral*/
@@ -49,7 +49,7 @@ h1 {
   margin-bottom: 15px;
 }
 
-fieldset{
+fieldset {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -59,8 +59,8 @@ fieldset{
 }
 
 fieldset:first-of-type label {
-  width: 100%;
-  height: 55px;
+  flex-basis: 100%;
+  height: fit-content;
 }
 
 fieldset:first-of-type input {
@@ -80,37 +80,110 @@ span {
 fieldset:nth-of-type(2) {
   justify-content: flex-start;
 }
+
 fieldset:nth-of-type(2) legend {
   margin: 10px 0;
   flex: none;
 }
+
 fieldset:nth-of-type(2) label {
   width: 100%;
   height: 35px;
+  display: flex;
+  justify-content: start;
   border: 1px solid var(--grey500Medium);
-  padding: 8px 0 0 10px;
+  padding: 8px 0 0 30px;
   border-radius: 5px;
 }
-fieldset:nth-of-type(2) input {
-  vertical-align: baseline;
-  margin-right: 15px;
+
+fieldset:nth-of-type(2) label:hover {
+  border: 1.5px solid var(--green600Medium);
 }
-fieldset:last-of-type{
+
+fieldset:nth-of-type(2) input {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+fieldset:nth-of-type(2) input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+fieldset:nth-of-type(2) input {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--green600Medium);
+}
+
+fieldset:nth-of-type(2) input::after {
+  content: "";
+  display: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 2px auto;
+  background-color: var(--green600Medium);
+}
+
+fieldset:nth-of-type(2) input:checked::after {
   display: block;
 }
-fieldset:last-of-type legend{
+
+fieldset:last-of-type,
+fieldset:nth-of-type(3) {
+  display: block;
+}
+
+fieldset:nth-of-type(3) legend {
   margin-bottom: 10px;
 }
-fieldset:last-of-type textarea {
+
+fieldset:nth-of-type(3) textarea {
   width: 100%;
   height: 150px;
   border-radius: 5px;
+  padding-left: 10px;
+  font-size: 18px;
 }
+
 fieldset:last-of-type label {
   font-size: 18px;
 }
 fieldset:last-of-type input {
-  margin:15px 10px  0 0;
+  appearance: none;
+}
+fieldset:last-of-type input {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--green600Medium);
+  margin-right: 12px;
+}
+fieldset:last-of-type input::after {
+  content: "✓";
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+  text-align: center;
+  color: transparent;
+}
+fieldset:last-of-type input:checked::after {
+  background-color: var(--green600Medium);
+  color: var(--green200Lighter);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+  border: 1.5px solid var(--green600Medium);
 }
 
 input[type="submit"] {
@@ -124,6 +197,32 @@ input[type="submit"] {
   font-size: 18px;
 }
 
+.succeeded-component {
+  width: 300px;
+  height: 90px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -100px;
+  margin: auto;
+  background-color: var(--green600Medium);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 10px 0 0 10px;
+  transition: all .3s ease-in-out;
+}
+.succeeded-component p:first-child {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.succeeded-component p:first-child img {
+  vertical-align: text-top;
+  margin-right: 10px;
+}
+.succeeded-component p:nth-child(2) {
+  font-size: 15px;
+  opacity: .8;
+} 
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -131,4 +230,35 @@ input[type="submit"] {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.err-msg {
+  color: var(--red);
+  font-size: 15px;
+  flex: none;
+  margin-top: 5px;
+}
+.success {
+  top: 5px !important;
+}
+
+fieldset:nth-of-type(2) .err-msg {
+  margin-top: -16px;
+}
+
+
+@media only screen and (min-width:768px) {
+  fieldset:first-of-type label:not(label:last-child){
+    flex-basis: 48%;
+  }
+  fieldset:first-of-type label:last-child {
+    flex-basis: 100%;
+  }
+  fieldset:nth-of-type(2) label {
+    flex-basis: 48%;
+  }
+  .succeeded-component {
+    width: 400px;
+    padding: 15px 0 0 10px;
+  }
 }
