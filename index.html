@@ -16,45 +16,44 @@
   <main>
     <section>
       <h1>Contact Us</h1>
-      <form action="" method="post">
+      <form action="" method="post" novalidate>
         <fieldset>
           <label for="first-name">First Name <span>*</span>
-            <input type="text" id="first-name" name="first-name" placeholder="Your First Name . . ." required>
+            <input type="text" id="first-name" name="first-name" placeholder="Your First Name . . .">
           </label>
           <label for="last-name">Last Name <span>*</span>
-            <input type="text" id="last-name" name="last-name" placeholder="Your Last Name . . ." required>
+            <input type="text" id="last-name" name="last-name" placeholder="Your Last Name . . .">
           </label>
           <label for="email-address">Email Address <span>*</span>
-            <input type="email" id="email-address" placeholder="You Email . . ." required>
+            <input type="email" id="email-address" placeholder="You Email . . .">
           </label>
         </fieldset>
         <fieldset>
           <legend>Query Type <span>*</span></legend>
           <label for="general">
-            <input type="radio" name="queries" id="general" value="general">General Enquiry</label>
+            <input type="radio" name="queries" id="query-general" value="general">General Enquiry</label>
           <label for="support">
-            <input type="radio" name="queries" id="support" value="support">Support Request</label>
+            <input type="radio" name="queries" id="query-support" value="support">Support Request</label>
         </fieldset>
         <fieldset>
           <legend>Message <span>*</span></legend>
-          <textarea cols="60" rows="20"></textarea>
+          <textarea cols="60" rows="20" id="msg"></textarea>
+        </fieldset>
+        <fieldset>
           <label for="contacted">
-            <input type="checkbox" id="contacted" name="contacted" required>I consest to being contacted by the team
+            <input type="checkbox" id="contacted" name="contacted">I consest to being contacted by the team
             <span>*</span>
           </label>
         </fieldset>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" id="sbmt">
       </form>
     </section>
+
+    <div class="succeeded-component">
+      <p><img src="./assets/images/icon-success-check.svg" alt="success check icon">Message Sent!</p>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
   </main>
-  <!-- Please enter a valid email address
-
-  Please select a query type
-
-  This field is required
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon! -->
 
   <footer>
     <div class="attribution">
@@ -62,6 +61,7 @@
       Coded by <a href="#">Muhammad Hisham</a>.
     </div>
   </footer>
+  <script src="main.js"></script>
 </body>
 
 </html>
