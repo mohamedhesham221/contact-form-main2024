@@ -140,6 +140,7 @@ fieldset:nth-of-type(3) {
 }
 
 fieldset:nth-of-type(3) label {
+  display: inline-block;
   margin-bottom: 10px;
 }
 
