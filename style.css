@@ -232,9 +232,6 @@ input[type="submit"] {
   color: hsl(228, 45%, 44%);
 }
 
-.hide-label {
-  display: none;
-}
 .err-msg {
   color: var(--red);
   font-size: 15px;
