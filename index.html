@@ -16,7 +16,7 @@
   <main>
     <section>
       <h1>Contact Us</h1>
-      <form action="" method="post" novalidate>
+      <form novalidate>
         <fieldset>
           <label for="first-name">First Name <span>*</span>
             <input type="text" id="first-name" name="first-name" placeholder="Your First Name . . .">
@@ -30,13 +30,13 @@
         </fieldset>
         <fieldset>
           <legend>Query Type <span>*</span></legend>
-          <label for="general">
+          <label for="query-general">
             <input type="radio" name="queries" id="query-general" value="general">General Enquiry</label>
-          <label for="support">
+          <label for="query-support">
             <input type="radio" name="queries" id="query-support" value="support">Support Request</label>
         </fieldset>
         <fieldset>
-          <label>Message <span>*</span></label>
+          <label for="msg">Message <span>*</span></label>
           <textarea cols="60" rows="20" id="msg"></textarea>
         </fieldset>
         <fieldset>
